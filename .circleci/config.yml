@@ -262,7 +262,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - install_awcli
+      - install_awscli
       - install_nodejs
       - restore_cache:
           keys: [frontend-deps]
