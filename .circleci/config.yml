@@ -52,7 +52,7 @@ commands:
             when: on_fail
             command: |
               # Example: kvdb.io
-              SUCCESS=$(curl --insecure  https://kvdb.io/${KVDB_BUCKET}/migration_<< parameters.Workflow_ID >>)
+              SUCCESS=$(curl --insecure  https://kvdb.io/${KVDB_BUCKET}/migration_<< parameters.workflow_id >>)
               # Logic for reverting the database state
               if (( $SUCCESS == 1 ));
               then
