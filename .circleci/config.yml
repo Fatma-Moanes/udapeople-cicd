@@ -61,7 +61,7 @@ commands:
             when: on_fail
             command: |
               # Example: kvdb.io
-              SUCCESS=$(curl --insecure  https://kvdb.io/${KVDB_BUCKET}/migration_<< parameters.workflow_id >>)
+              SUCCESS=$(curl --insecure  https://kvdb.io/${KVDB_BUCKET}/migration_<< parameters.Workflow_ID >>)
               # Logic for reverting the database state
               if (( $SUCCESS == 1 ));
               then
@@ -321,7 +321,7 @@ jobs:
       - run:
           name: Deploy backend
           command: |
-            export TYPEROM_MIGRATIONS_DIR-./migrations
+            export TYPEROM_MIGRATIONS_DIR=./migrations
             export TYPEORM_ENTITIES=./modules/domain/**/*.entity{.ts,.js}
             export TYPEORM_MIGRATIONS=./migrations/*.ts
 
